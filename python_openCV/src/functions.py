@@ -66,7 +66,25 @@ def get_y_range(contours):
     y_max = np.max(all_points[:, 1])
 
     return y_min, y_max
+    
+def get_x_range(contours):
 
+    all_points = []
+
+    for contour in contours:
+
+        approx = approximate_contour(contour)
+
+        points = approx.reshape(-1, 2)
+
+        all_points.extend(points)
+
+    all_points = np.array(all_points)
+
+    x_min = np.min(all_points[:, 0])
+    x_max = np.max(all_points[:, 0])
+
+    return x_min, x_max
 
 def calculate_distances(cy, y_min, y_max):
 
