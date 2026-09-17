@@ -190,7 +190,12 @@ cv.putText(
 #resize lại window cho nhỏ
 cv.namedWindow("Image", cv.WINDOW_NORMAL)
 cv.resizeWindow("Image", 200, 100)
+cv.namedWindow("Mask White", cv.WINDOW_NORMAL)
+cv.resizeWindow("Mask White", 200, 100)
+cv.namedWindow("Mask Black", cv.WINDOW_NORMAL)
+cv.resizeWindow("Mask Black", 200, 100)
 cv.imshow("Image", image_cube)
 cv.imshow("Mask White", mask_white)
+cv.imshow("Mask Black", mask_black)
 cv.waitKey(0)
 cv.destroyAllWindows()
